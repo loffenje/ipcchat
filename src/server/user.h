@@ -13,8 +13,6 @@ struct User {
     TCPSocket *tcpSocket;
 };
 
-
-
 };
 
 #endif
