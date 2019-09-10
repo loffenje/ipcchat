@@ -6,7 +6,6 @@
 
 namespace ipcchat {
 
-
 struct TCPSocket;
 
 struct User {

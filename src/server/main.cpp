@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 
 #include "server_manager.h"
