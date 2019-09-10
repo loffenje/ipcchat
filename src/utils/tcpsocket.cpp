@@ -5,10 +5,8 @@ using namespace ipcchat;
 
 TCPSocket ipcchat::initSocket(int port)
 {
-
     TCPSocket tcpSocket;
     tcpSocket.fd = socket(AF_INET, SOCK_STREAM, 0);
-    
     std::memset(&tcpSocket.servAddr, 0, sizeof(tcpSocket.servAddr));
 
     tcpSocket.servAddr.sin_family = AF_INET;
@@ -45,7 +43,6 @@ TCPSocket ipcchat::initSocket(const std::string &addr, int port)
 TCPSocket *ipcchat::consumeConn(const TCPSocket &tcpSocket) 
 {
     int rc = listen(tcpSocket.fd, 1);
-
     if (rc == -1) {
         std::cerr << "listen error\n";
         return nullptr;
@@ -67,7 +64,6 @@ void ipcchat::closeConn(TCPSocket *tcpSocket)
 {
     close(tcpSocket->fd);
 }
-
 
 void ipcchat::closeConn(TCPSocket &tcpSocket)
 {
